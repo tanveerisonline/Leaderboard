@@ -1,8 +1,8 @@
 import './style.css';
 
-function refresh() {
+const refresh = () => {
   // Code to refresh the leaderboard data goes here
-}
+};
 refresh();
 
 const form = document.querySelector('form');
