@@ -77,11 +77,3 @@ input {
   float: right;
   margin-right: 160px;
 }
-
-.footer {
-  background-color: #bebcbc;
-  height: 40px;
-  width: 100%;
-  bottom: 0;
-  margin: 80px 0 0 0;
-}
