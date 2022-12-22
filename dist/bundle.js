@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nfunction refresh() {\n  // Code to refresh the leaderboard data goes here\n}\nrefresh();\n\nconst form = document.querySelector('form');\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n\n  const name = document.getElementById('name').value;\n  const score = document.getElementById('score').value;\n\n  // Add the data to the leaderboard\n  const leaderboard = document.getElementById('leaderboard');\n  leaderboard.innerHTML += `<div>${name}: ${score}</div>`;\n});\n\n//# sourceURL=webpack://webpack/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst refresh = () => {\n  // Code to refresh the leaderboard data goes here\n};\nrefresh();\n\nconst form = document.querySelector('form');\nform.addEventListener('submit', (event) => {\n  event.preventDefault();\n\n  const name = document.getElementById('name').value;\n  const score = document.getElementById('score').value;\n\n  // Add the data to the leaderboard\n  const leaderboard = document.getElementById('leaderboard');\n  leaderboard.innerHTML += `<div>${name}: ${score}</div>`;\n});\n\n//# sourceURL=webpack://webpack/./src/index.js?");
 
 /***/ })
 
