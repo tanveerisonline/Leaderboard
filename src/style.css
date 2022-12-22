@@ -22,11 +22,13 @@ h3 {
   font-size: 1.2rem;
 }
 
-#leaderboard div:nth-child(odd) {
+#leaderboard,
+.change-style:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
-#leaderboard div:nth-child(even) {
+#leaderboard,
+.change-style:nth-child(even) {
   background-color: #fff;
 }
 

@@ -1,36 +1,20 @@
-// leaderboard.js
-export const refresh = () => {
-  // Fetch data from the API
-  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/')
-    .then((response) => response.json())
-    .then((data) => {
-      // Add the data to the leaderboard
-      const leaderboard = document.getElementById('leaderboard');
-      leaderboard.innerHTML = ''; // Clear the leaderboard
-      data.forEach((item) => {
-        leaderboard.innerHTML += `<div>${item.name}: ${item.score}</div>`;
-      });
-    });
+const apiUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/uVgJkr65ujFhWC2pGzJ/scores';
+
+const getScores = async () => {
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  return data.result;
 };
 
-const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const score = document.getElementById('score').value;
-
-  // Add the data to the API
-  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/', {
+const setScores = async (obj) => {
+  const response = await fetch(`${apiUrl}`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: JSON.stringify({ name, score }),
+    body: JSON.stringify(obj),
   });
+  await response.json();
+};
 
-  // Refresh the leaderboard to show the updated data
-  refresh();
-});
-
-// export default refresh();
+export { getScores, setScores };

@@ -1,24 +1,27 @@
 import './style.css';
-// import { refresh } from './modules/api.js';
+import { getScores, setScores } from './modules/api.js';
 
-// const refresh = () => {
-//   // Code to refresh the leaderboard data goes here
-// };
-// refresh();
+const inputForm = document.querySelector('#input-form');
+const user = document.querySelector('#inputName');
+const score = document.querySelector('#inputScore');
+inputForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const obj = {};
+  obj.user = user.value;
+  obj.score = score.value;
+  setScores(obj);
+  inputForm.reset();
+});
 
-// const form = document.querySelector('form');
-// form.addEventListener('submit', (event) => {
-//   event.preventDefault();
+const render = async () => {
+  const list = await getScores();
+  const scoreList = document.querySelector('#leaderboard');
+  scoreList.innerHTML = '';
+  list.forEach((obj) => {
+    scoreList.innerHTML += `<div class="change-style">${obj.user}: ${obj.score}</div>`;
+  });
+};
+render();
 
-//   const name = document.getElementById('name').value;
-//   const score = document.getElementById('score').value;
-
-//   // Add the data to the leaderboard
-//   const leaderboard = document.getElementById('leaderboard');
-//   leaderboard.innerHTML += `<div>${name}: ${score}</div>`;
-// });
-
-// main.js
-import { refresh } from './modules/api.js';
-
-refresh(); // Call the refresh function
+const refreshList = document.querySelector('#refresh');
+refreshList.addEventListener('click', render);
