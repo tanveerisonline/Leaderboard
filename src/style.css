@@ -18,16 +18,22 @@ h3 {
 }
 
 #leaderboard div {
-  margin: 8px 0;
-  font-size: 1.2rem;
+  margin: 8px 5px;
+  font-size: 1.5rem;
 }
 
-#leaderboard div:nth-child(odd) {
+#leaderboard,
+.change-style:nth-child(odd) {
   background-color: #f2f2f2;
+  list-style: none;
+  font-size: 1.4rem;
 }
 
-#leaderboard div:nth-child(even) {
+#leaderboard,
+.change-style:nth-child(even) {
   background-color: #fff;
+  list-style: none;
+  font-size: 1.4rem;
 }
 
 h1 {
