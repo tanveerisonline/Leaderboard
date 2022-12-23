@@ -1,11 +1,12 @@
 body {
+  background-color: rgb(32, 84, 97);
   overflow-x: hidden;
 }
 
 #leaderboard {
   padding: 10px;
   margin: 10px;
-  border: 3px solid rgb(179, 178, 178);
+  border: 3px solid #000;
   min-height: 400px;
 }
 
@@ -24,14 +25,14 @@ h3 {
 
 #leaderboard,
 .change-style:nth-child(odd) {
-  background-color: #f2f2f2;
+  background-color: rgb(81, 184, 184);
   list-style: none;
   font-size: 1.4rem;
 }
 
 #leaderboard,
 .change-style:nth-child(even) {
-  background-color: #fff;
+  background-color: #c7c7c7;
   list-style: none;
   font-size: 1.4rem;
 }
@@ -57,13 +58,6 @@ h1 {
   text-align: left;
 }
 
-input {
-  width: 300px;
-  height: 30px;
-  border: 2px solid #b3b0b0;
-  padding-left: 10px;
-}
-
 #recent-score {
   display: flex;
   justify-content: space-between;
@@ -72,14 +66,50 @@ input {
 }
 
 .refreshing {
-  width: 100px;
   height: 35px;
   margin-top: 5px;
 }
 
-.submit-btn {
+.submit-btn,
+.refreshing {
   font-size: 1rem;
   width: 100px;
-  float: right;
-  margin-right: 160px;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.submit-btn:hover,
+.refreshing:hover {
+  color: #fff;
+  background-color: rgb(27, 27, 27);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+}
+
+form {
+  border: 2px solid #000;
+  padding: 20px;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #000;
+  font-size: 1.3rem;
+  padding: 10px;
+  width: 300px;
+  height: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+::placeholder {
+  color: rgb(0, 0, 0);
 }
