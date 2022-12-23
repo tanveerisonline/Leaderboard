@@ -28,8 +28,8 @@ form[2].onclick = (e) => {
     form[0].value = '';
     form[1].value = '';
   } else {
-    form[0].placeholder = 'FILED CANT BE EMPLTY!!!';
-    form[1].placeholder = 'FILED CANT BE EMPLTY!!!';
+    form[0].placeholder = 'Please enter name';
+    form[1].placeholder = 'Please enter score';
   }
 };
 
